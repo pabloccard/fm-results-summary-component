@@ -1,94 +1,83 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import { Brain } from '../icons/brain'
+import { ChatRemove } from '../icons/chat-remove'
+import { Eye } from '../icons/eye'
+import { Flash } from '../icons/flash'
+import './page.css'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className='cards'>
+      <div className='results'>
+        <h2 className='results__title'>Your Result</h2>
+
+        <div className='results__score-container'>
+          <span className='results__score'>76</span>
+          <span className='results__max-score'>of 100</span>
+        </div>
+
+        <div className='results__result-container'>
+          <h3 className='results__result-title'>Great</h3>
+          <p className='results__result-message'>Your performance exceed 65% of the people conducting the test here!</p>
         </div>
       </div>
+      
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <div className='summary'>
+        <h2 className='summary__title'>Summary</h2>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <ul className='summary__items'>
+          <li className='summary__item summary__item--red'>
+            <span className='summary__item-title'>
+              <Flash />
+              Reaction
+            </span>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+            <div>
+              <span className='summary__score'>80 </span>
+              <span className='summary__score summary__score--low-opacity'>/ 100</span>
+            </div>
+          </li>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+          <li className='summary__item summary__item--yellow'>
+            <span className='summary__item-title'>
+             <Brain />
+              Memory
+            </span>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+            <div>
+              <span className='summary__score '>80 </span>
+              <span className='summary__score summary__score--low-opacity'>/ 100</span>
+            </div>
+          </li>
+
+          <li className='summary__item summary__item--green'>
+            <span className='summary__item-title'>
+              <ChatRemove />
+              Verbal
+            </span>
+
+            <div>
+              <span className='summary__score'>80 </span>
+              <span className='summary__score summary__score--low-opacity'>/ 100</span>
+            </div>
+          </li>
+
+          <li className='summary__item summary__item--blue'>
+            <span className='summary__item-title'>
+              <Eye />
+              Visual
+            </span>
+
+            <div>
+              <span className='summary__score'>80 </span>
+              <span className='summary__score summary__score--low-opacity'>/ 100</span>
+            </div>
+          </li>
+        </ul>
+        
+        <button className='summary__btn'>
+          Continue
+        </button>
       </div>
     </main>
   )
